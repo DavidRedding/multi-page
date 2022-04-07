@@ -1,6 +1,6 @@
 const Home = () => (
-  <div>
-    <h2>Homepage</h2>
+  <div className=" space-y-2 mb-8">
+    <h2 className="font-bold text-lg ">Homepage</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cum sed dolor, maiores similique repudiandae id
       quod esse cumque voluptates, aliquam autem facere, omnis laborum aspernatur deserunt animi iste molestias?
