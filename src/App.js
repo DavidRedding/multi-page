@@ -9,8 +9,13 @@ const App = () => {
   return (
     <div className="min-h-screen p-6 max-w-7xl mx-auto">
       <BrowserRouter>
-        <nav>
-          <h1 className="font-bold text-xl mb-8">My Articles</h1>
+        <nav className="mb-8 flex justify-between">
+          <h1 className="font-bold text-xl ">My Articles</h1>
+          <div className="flex justify-between underline w-1/3 text-gray-800">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </div>
         </nav>
         <Switch>
           <Route exact path="/">
