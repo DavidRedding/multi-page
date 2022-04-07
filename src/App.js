@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 // page components
 import Home from './pages/Home';
@@ -12,9 +12,9 @@ const App = () => {
         <nav className="mb-8 flex justify-between">
           <h1 className="font-bold text-xl ">My Articles</h1>
           <div className="flex justify-between underline w-1/3 text-gray-800">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         </nav>
         <Switch>
