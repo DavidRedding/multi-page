@@ -1,7 +1,24 @@
 import { useParams } from 'react-router-dom';
+import { useAxios } from '../hooks/useAxios';
 const Article = () => {
   const { id } = useParams();
-  return <div>Article Page - {id}</div>;
+  const url = `http://localhost:3000/articles/${id}`;
+  const { data: article, isPending, error } = useAxios(url);
+  const rendered = (
+    <div className="space-y-2">
+      <h1 className="font-bold text-2xl">{article.title}</h1>
+      <h2>By {article.author}</h2>
+      <p>{article.body}</p>
+    </div>
+  );
+
+  return (
+    <div>
+      {isPending && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+      {article && rendered}
+    </div>
+  );
 };
 
 export default Article;

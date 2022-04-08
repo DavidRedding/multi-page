@@ -5,7 +5,7 @@ const Home = () => {
   const { data: articles, isPending, error } = useAxios('http://localhost:3000/articles');
 
   const rendered = articles.map((article) => (
-    <div key={article.id} className="border border-slate-100 p-4 py-8 space-y-2 rounded shadow ">
+    <div key={article.id} className="border border-slate-100 p-4 py-8 space-y-2 rounded shadow flex flex-col ">
       <h1 className="font-bold">{article.title}</h1>
       <p>{article.author}</p>
       <Link to={`/articles/${article.id}`}>Read more...</Link>

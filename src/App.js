@@ -12,13 +12,13 @@ const App = () => {
       <BrowserRouter>
         <nav className="mb-8 flex items-center space-x-6 ">
           <h1 className="font-bold text-xl mr-auto ">My Articles</h1>
-          <NavLink exact activeClassName=" bg-slate-800 text-white" to="/">
+          <NavLink to="/" exact activeClassName=" bg-slate-800 text-white">
             Home
           </NavLink>
-          <NavLink activeClassName=" bg-slate-800 text-white" to="/about">
+          <NavLink to="/about" activeClassName=" bg-slate-800 text-white">
             About
           </NavLink>
-          <NavLink activeClassName=" bg-slate-800 text-white" to="/contact">
+          <NavLink to="/contact" activeClassName=" bg-slate-800 text-white">
             Contact
           </NavLink>
         </nav>
