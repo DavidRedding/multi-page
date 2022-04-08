@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
-import { useAxios } from '../src/hooks/useAxios';
 
 // page components
 import Home from './pages/Home';

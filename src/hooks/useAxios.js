@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-const useAxios = (url) => {
+export const useAxios = (url) => {
   const [data, setData] = useState([]);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
@@ -32,5 +32,3 @@ const useAxios = (url) => {
 
   return { data, isPending, error };
 };
-
-export default useAxios;

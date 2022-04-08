@@ -1,11 +1,23 @@
-const Home = () => (
-  <div className=" space-y-2 mb-8">
-    <h2 className="font-semibold text-lg ">Home</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cum sed dolor, maiores similique repudiandae id
-      quod esse cumque voluptates, aliquam autem facere, omnis laborum aspernatur deserunt animi iste molestias?
-    </p>
-  </div>
-);
+import { useAxios } from '../hooks/useAxios';
+
+const Home = () => {
+  const { data: articles, isPending, error } = useAxios('http://localhost:3000/articles');
+
+  const rendered = articles.map((article) => (
+    <div key={article.id} className="border border-slate-100 p-4 py-8 space-y-2 rounded shadow ">
+      <h1 className="font-bold">{article.title}</h1>
+      <p>{article.author}</p>
+    </div>
+  ));
+
+  return (
+    <div className=" space-y-4">
+      <h2 className="font-bold text-lg ">Articles</h2>
+      {isPending && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+      {articles && rendered}
+    </div>
+  );
+};
 
 export default Home;
