@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { useAxios } from '../src/hooks/useAxios';
 
 // page components
 import Home from './pages/Home';
@@ -9,13 +10,17 @@ const App = () => {
   return (
     <div className="min-h-screen p-6 max-w-7xl mx-auto">
       <BrowserRouter>
-        <nav className="mb-8 flex justify-between">
-          <h1 className="font-bold text-xl ">My Articles</h1>
-          <div className="flex justify-between underline w-1/3 text-gray-800">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
-          </div>
+        <nav className="mb-8 flex items-center space-x-6 ">
+          <h1 className="font-bold text-xl mr-auto ">My Articles</h1>
+          <NavLink exact activeClassName=" bg-slate-800 text-white" to="/">
+            Home
+          </NavLink>
+          <NavLink activeClassName=" bg-slate-800 text-white" to="/about">
+            About
+          </NavLink>
+          <NavLink activeClassName=" bg-slate-800 text-white" to="/contact">
+            Contact
+          </NavLink>
         </nav>
         <Switch>
           <Route exact path="/">
