@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useAxios } from '../hooks/useAxios';
+
 const Article = () => {
   const { id } = useParams();
   const url = `http://localhost:3000/articles/${id}`;
@@ -8,9 +9,7 @@ const Article = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (error) {
-      setTimeout(() => history.push('/'), 2000);
-    }
+    if (error) setTimeout(() => history.push('/'), 2000);
   }, [error, history]);
 
   const rendered = (
