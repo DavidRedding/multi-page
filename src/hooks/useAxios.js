@@ -21,6 +21,7 @@ export const useAxios = (url) => {
           console.log(`the fetch was aborted`);
         } else {
           setIsPending(false);
+          setData(false);
           setError(`Could not fetch the data`);
         }
       }
